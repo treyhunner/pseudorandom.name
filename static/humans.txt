@@ -1,0 +1,12 @@
+/* TEAM */
+
+Your title: Trey Hunner
+Site: http://treyhunner.com
+Location: San Diego, CA, USA
+
+
+/* SITE */
+
+Software: Python, Flask, names
+Instructions and source code: https://github.com/treyhunner/pseudorandom.name
+Hosting: Heroku

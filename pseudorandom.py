@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
-from flask import Flask, render_template, request, make_response
+from flask import (Flask, render_template, request, make_response,
+                   send_from_directory)
 from names import get_full_name
 
 
@@ -16,6 +17,11 @@ def index():
                               {'Content-Type': 'text/plain'}))
     else:
         return render_template('index.html', name=get_full_name())
+
+
+@app.route('/humans.txt')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 
 if __name__ == "__main__":
