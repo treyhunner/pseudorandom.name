@@ -9,8 +9,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    if (request.headers.get('User-Agent', '')[:4].lower() == 'curl' or
-        request.headers['Content-Type'] == 'text/plain'):
+    content_type = request.headers.get('Content-Type', '')
+    browser = request.headers.get('User-Agent', '').lower()
+    if browser[:4] in ('curl', 'wget') and content_type in ('text/plain', ''):
         return make_response((u"{0}\n".format(get_full_name()), 200,
                               {'Content-Type': 'text/plain'}))
     else:
