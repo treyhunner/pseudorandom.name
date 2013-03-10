@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 from flask import Flask, render_template, request
 from names import get_full_name
