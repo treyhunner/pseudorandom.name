@@ -21,6 +21,8 @@ From the command line:
 
     $ curl -L pseudorandom.name
     Carlos Austin
+    $ wget -qO- pseudorandom.name
+    Arthur Williamson
 
 
 License
