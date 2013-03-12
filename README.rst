@@ -3,7 +3,7 @@ pseudorandom.name
 
 An HTTP-based random name generator written in Python if Flask.
 
-Available online at http://www.pseudorandom.name
+Available online at http://pseudorandom.name
 
 Currently hosted on Heroku.  Uses `names`_ Python package.
 
@@ -11,15 +11,15 @@ Currently hosted on Heroku.  Uses `names`_ Python package.
 Usage
 -----
 
-From a web browser: http://www.pseudorandom.name
+From a web browser: http://pseudorandom.name
 
-From a mobile web browser: http://www.pseudorandom.name
+From a mobile web browser: http://pseudorandom.name
 
 From the command line:
 
 .. code-block:: bash
 
-    $ curl -L pseudorandom.name
+    $ curl pseudorandom.name
     Carlos Austin
     $ wget -qO- pseudorandom.name
     Arthur Williamson
