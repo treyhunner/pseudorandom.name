@@ -2,7 +2,7 @@
 import os
 from flask import (Flask, render_template, request, make_response,
                    send_from_directory)
-from names import get_full_name
+from db import get_full_name
 
 
 app = Flask(__name__)
