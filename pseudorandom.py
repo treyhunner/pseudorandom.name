@@ -12,11 +12,17 @@ cors = CORS(app)
 
 @app.route("/")
 def index():
-    content_type = request.headers.get('Content-Type', '')
+    content_type = request.headers.get('Accept', '')
     browser = request.headers.get('User-Agent', '').lower()
     if request_wants_json():
         return jsonify(name=get_full_name())
-    if browser[:4] in ('curl', 'wget') and content_type in ('text/plain', ''):
+    user_agent_prefixes = ("curl", "wget", "python")
+    acceptable_types = ("text/plain", "", "*/*")
+    is_cli_user_agent = (
+        browser.startswith(user_agent_prefixes)
+        and content_type in acceptable_types
+    )
+    if is_cli_user_agent:
         return make_response((u"{0}\n".format(get_full_name()), 200,
                               {'Content-Type': 'text/plain'}))
     else:
