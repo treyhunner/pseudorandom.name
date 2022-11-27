@@ -1,1 +1,1 @@
-web: python pseudorandom.py
+web: gunicorn pseudorandom
